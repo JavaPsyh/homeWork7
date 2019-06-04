@@ -22,8 +22,8 @@ class Pair<T, V> {
         return second;
     }
 
-    public static <T, V> Pair of(T t, V v){
-        return new Pair (t, v);
+    public static <T, V> Pair of(T t, V v) {
+        return new Pair(t, v);
     }
 
     @Override

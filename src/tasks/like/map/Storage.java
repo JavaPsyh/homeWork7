@@ -22,7 +22,7 @@ public class Storage<T, V> {
             }
             values = temp;
         }
-        values[indexForNextPut] = new Something( key, value);
+        values[indexForNextPut] = new Something(key, value);
         indexForNextPut++;
     }
 

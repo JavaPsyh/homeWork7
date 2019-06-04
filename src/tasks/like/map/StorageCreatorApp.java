@@ -3,15 +3,15 @@ package tasks.like.map;
 public class StorageCreatorApp {
 
     public static void main(String[] args) {
-        Storage <Integer, String> storage;
-        storage = new Storage<> ();
+        Storage<Integer, String> storage;
+        storage = new Storage<>();
         storage.put(42, "theAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything");
         String value = storage.get(42);
         System.out.println(value);
         StringBuilder stringBuilder = new StringBuilder("");
         for (int i = 0; i < 50; i++) {
 
-            if(i == 42){
+            if (i == 42) {
                 continue;
             }
             stringBuilder.append(i);
@@ -28,7 +28,7 @@ public class StorageCreatorApp {
         StringBuilder stringBuilder1 = new StringBuilder("");
         for (int i = 0; i <= 50; i++) {
 
-            if(i == 50){
+            if (i == 50) {
                 continue;
             }
             stringBuilder1.append(i);
