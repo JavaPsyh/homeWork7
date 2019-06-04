@@ -5,7 +5,7 @@ public class StorageCreatorApp {
     public static void main(String[] args) {
         Storage<Integer, String> storage;
         storage = new Storage<>();
-        storage.put(42, "theAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything");
+        storage.put(42, "The answer to the ultimate question of life the universe and everything");
         String value = storage.get(42);
         System.out.println(value);
         StringBuilder stringBuilder = new StringBuilder("");
