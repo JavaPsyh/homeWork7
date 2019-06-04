@@ -39,5 +39,15 @@ public class StorageCreatorApp {
         }
         System.out.println();
         System.out.println(storage1.get(50));
+        System.out.println();
+        Storage<String, Integer> storage2 = new Storage<>();
+        storage2.put("Katia", 35);
+        storage2.put("Zina", 32);
+        storage2.put("Vera", 37);
+        storage2.put("Sofia", 18);
+        System.out.println(storage2.get("Katia"));
+        System.out.println(storage2.get("Sofia"));
+
+
     }
 }
