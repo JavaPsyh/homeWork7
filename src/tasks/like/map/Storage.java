@@ -1,8 +1,7 @@
 package tasks.like.map;
 
 public class Storage<T, V> {
-
-    private final int DEFAULT_CAPACITY = 5;
+    private static final int DEFAULT_CAPACITY = 5;
     private Depository<T, V>[] values = new Depository[DEFAULT_CAPACITY];
     private int indexForNextPut = 0;
 
@@ -21,7 +20,6 @@ public class Storage<T, V> {
     }
 
     public void put(T key, V value) {
-
         if (indexForNextPut == values.length) {
             arrayGrower();
         }

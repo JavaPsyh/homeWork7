@@ -36,11 +36,20 @@ class Pair<T, V> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pair<?, ?> pair = (Pair<?, ?>) o;
-        return Objects.equals(first, pair.first) &&
-                Objects.equals(second, pair.second);
+        if (this == o) {
+            return true;
+        }
+        if (this.getClass() != o.getClass()) {
+            return false;
+        }
+        if (!(o instanceof Pair)) {
+            return false;
+        }
+        Pair<T, V> pair = (Pair<T, V>) o;
+        return ((this.first == null) ?
+                pair.first == null : this.first.equals(pair.first)) &&
+                ((this.second == null ?
+                pair.second == null : this.second.equals(pair.second)));
     }
 
     @Override
@@ -50,7 +59,6 @@ class Pair<T, V> {
         int result = theFortyTwoAnswer * prime;
         result = prime * Objects.hash(this.first) / theFortyTwoAnswer + result;
         result = prime * Objects.hash(this.second) / theFortyTwoAnswer + result;
-
         return result;
     }
 }
