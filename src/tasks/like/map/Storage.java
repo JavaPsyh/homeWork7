@@ -2,7 +2,8 @@ package tasks.like.map;
 
 public class Storage<T, V> {
 
-    private Something<T, V>[] values = new Storage.Something[5];
+    private final int DEFAULT_CAPACITY = 5;
+    private Depository<T, V>[] values = new Depository[DEFAULT_CAPACITY];
     private int indexForNextPut = 0;
 
     public Storage() {
@@ -12,17 +13,19 @@ public class Storage<T, V> {
         return indexForNextPut;
     }
 
+    public void arrayGrower() {
+        Depository[] temp;
+        temp = new Depository[values.length + (values.length >> 1)];
+        System.arraycopy(values, 0, temp, 0, values.length);
+        values = temp;
+    }
+
     public void put(T key, V value) {
 
         if (indexForNextPut == values.length) {
-            Something[] temp;
-            temp = new Something[values.length + (values.length / 2)];
-            for (int i = 0; i < values.length; i++) {
-                temp[i] = values[i];
-            }
-            values = temp;
+            arrayGrower();
         }
-        values[indexForNextPut] = new Something(key, value);
+        values[indexForNextPut] = new Depository(key, value);
         indexForNextPut++;
     }
 
@@ -30,27 +33,9 @@ public class Storage<T, V> {
         V result = null;
         for (int i = 0; i < indexForNextPut; i++) {
             if (key == values[i].getKey()) {
-                result = values[i].getSomething();
+                result = values[i].getValue();
             }
         }
         return result;
-    }
-
-    public class Something<T, V> {
-        private T key;
-        private V something;
-
-        public Something(T i, V something) {
-            this.key = i;
-            this.something = something;
-        }
-
-        private T getKey() {
-            return key;
-        }
-
-        private V getSomething() {
-            return something;
-        }
     }
 }

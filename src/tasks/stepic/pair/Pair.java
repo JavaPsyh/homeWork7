@@ -46,10 +46,10 @@ class Pair<T, V> {
     @Override
     public int hashCode() {
         final int prime = 31;
-        final int theAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything = 42;
-        int result = theAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything * prime;
-        result = prime * Objects.hash(this.first) / theAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything + result;
-        result = prime * Objects.hash(this.second) / theAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything + result;
+        final int theFortyTwoAnswer = 42;
+        int result = theFortyTwoAnswer * prime;
+        result = prime * Objects.hash(this.first) / theFortyTwoAnswer + result;
+        result = prime * Objects.hash(this.second) / theFortyTwoAnswer + result;
 
         return result;
     }

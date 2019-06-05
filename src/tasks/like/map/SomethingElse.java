@@ -10,7 +10,6 @@ public class SomethingElse {
     @Override
     public String toString() {
         return "SomethingElse{" +
-                "numberOne = '" + numberOne + '\'' +
-                '}';
+                "numberOne = '" + numberOne + '\'' + '}';
     }
 }

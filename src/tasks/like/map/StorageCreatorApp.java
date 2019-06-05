@@ -47,7 +47,5 @@ public class StorageCreatorApp {
         storage2.put("Sofia", 18);
         System.out.println(storage2.get("Katia"));
         System.out.println(storage2.get("Sofia"));
-
-
     }
 }
